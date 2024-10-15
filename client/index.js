@@ -216,12 +216,9 @@ async function loadPage() {
     case 'home':
       // panggil function fetchBooks
       await fetchBooks();
-
       main.innerHTML = pageListMainContent;
-
       const tableBody = document.querySelector('tbody');
-
-      const rows = generateRows(window.books);
+      const rows = generateRows(books);
       tableBody.innerHTML = rows;
 
       break;
@@ -242,17 +239,15 @@ async function loadPage() {
       break;
     }
   }
-async function fetchBooks() {
+  async function fetchBooks() {
     try {
       const response = await fetch('http://localhost:3333/books');
-      const books = await response.json();
-      window.books = books;
-      
-  } catch (error) {
-    console.log(error);
-    console.log('Terjadi kesalahan saat mengambil data buku');
+      books = await response.json();
+    } catch (error) {
+      console.log(error);
+      console.log('Terjadi kesalahan saat mengambil daftar buku');
+    }
   }
-}
 
 async function addBook(book) {
   try {
