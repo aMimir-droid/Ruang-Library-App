@@ -167,10 +167,10 @@ navLinks.forEach((navLink) => {
 
 function generateRows(books) {
   let rows = '';
-  if (books.length === 0) {
+    if (!books || books.length === 0) {
     rows = `<tr>
-  <td colspan="6" class="px-6 py-4 border-b text-center">Tidak ada buku yang ditemukan</td>
-</tr>`;
+      <td colspan="5" class="px-6 py-4 border-b text-center">Tidak ada buku yang ditemukan</td>
+    </tr>`;
   } else {
     books.forEach(book => {
       rows += `<tr class="book-item">
@@ -185,6 +185,7 @@ function generateRows(books) {
       </tr>`;
     });
   }
+  
   return rows;
 }
 
