@@ -214,11 +214,17 @@ function generateEditFormInput() {
 async function loadPage() {
   switch (currentPage) {
     case 'home':
-      // panggil function fetchBooks
+      /*panggil function fetchBooks*/
+
       await fetchBooks();
+
       main.innerHTML = pageListMainContent;
-      const tableBody = document.querySelector('tbody');
+
+      /*panggil function generateRows dengan parameter books dan simpan hasilnya ke variabel rows
+      kemudian isi innerHTML dari tableBody dengan rows
+      */
       const rows = generateRows(books);
+      const tableBody = document.querySelector('tbody');
       tableBody.innerHTML = rows;
 
       break;
@@ -232,23 +238,28 @@ async function loadPage() {
         kemudian isi innerHTML dari form dengan formInput
       */
       const formInput = generateEditFormInput();
-      document.querySelector('form').innerHTML = formInput;
+      form.innerHTML = formInput;
+
       break;
-      case 'add':
+    case 'add':
       main.innerHTML = pageAddBookMainContent;
       break;
-    }
   }
+}
+
   async function fetchBooks() {
     try {
-      const response = await fetch('http://localhost:3333/books');
+      /* 
+        fetch data buku dari http://localhost:3333/books
+        simpan hasilnya ke variabel global books
+      */
+      const response = await fetch("http://localhost:3333/books");
       books = await response.json();
     } catch (error) {
       console.log(error);
-      console.log('Terjadi kesalahan saat mengambil daftar buku');
+      console.log('Terjadi kesalahan saat mengambil data buku');
     }
   }
-
 async function addBook(book) {
   try {
     const response = await fetch('http://localhost:3333/books', {
