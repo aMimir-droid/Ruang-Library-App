@@ -10,6 +10,6 @@ const studentName = 'Septian Dwi Saputra'; // TODO: replace this
 
 const studentId = 'FS10785928'; // TODO: replace this
 
-const NetlifyDeployUrl = 'TODO: replace me'; // TODO: replace this
+const NetlifyDeployUrl = 'https://sleepin-library-app.netlify.app/'; // TODO: replace this
 
 module.exports = { studentName, studentId, NetlifyDeployUrl };
