@@ -1,0 +1,26 @@
+{
+	"name": "html-assignment-library-app",
+	"course": "Basic Frontend Web Development",
+	"title": "Assignment - Library App",
+	"order": 999,
+	"topics": [
+		"HTML",
+		"Semantic HTML",
+		"CSS",
+		"Javascript",
+		"DOM",
+		"API",
+		"Fetch",
+		"Async",
+		"Promise",
+		"Tailwind CSS",
+		"Deployment",
+		"Netlify"
+	],
+	"image": "nodejs-basic",
+	"command": "npm run test",
+	"totalTestCase": 7,
+	"metadata": {
+		"type": "assignment"
+	}
+}
